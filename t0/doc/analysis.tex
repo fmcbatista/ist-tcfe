@@ -12,6 +12,60 @@ the capacitor terminals. Applying the Kirchhoff Voltage Law (KVL), a single
 equation for the single loop in the circuit can be written as
 
 \begin{equation}
+  V1(-\frac{1}{R1}-\frac{1}{R2}-\frac{1}{R3}) + V2\frac{1}{R2} + V4\frac{1}{R2} = 0
+\end{equation}
+
+\begin{equation}
+  V1(Kb+\frac{1}{R2}) -V2\frac{1}{R2} - V4Kb = 0
+\end{equation}
+
+\begin{equation}
+  V3=-Va
+\end{equation}
+
+\begin{equation}
+  V1\frac{1}{R3} + V3\frac{1}{R4} + V4(-\frac{1}{R3}-\frac{1}{R4}-\frac{1}{R5}) + V5\frac{1}{R5} + V6\frac{1}{R7} - V7\frac{1}{R7} = Id
+\end{equation}
+
+\begin{equation}
+  V1Kb - V1(\frac{1}{R5}-Kb) + V5\frac{1}{R5}= Id
+\end{equation}
+
+\begin{equation}
+  V3\frac{1}{R6} + V5(-\frac{1}{R6}-\frac{1}{R7}) + V7\frac{1}{R7}= 0
+\end{equation}
+
+\begin{equation}
+  V3\frac{Kc}{R6} - V4 - V6\frac{Kc}{R6} + V7 = 0
+\end{equation}
+
+\begin{equation}
+  Ia(R1+R2+R3) + IbR3 + IcR4 = Va
+\end{equation}
+
+\begin{equation}
+  IaR4 + Ic(R4+R6+R7-Kc) = 0
+\end{equation}
+
+\begin{equation}
+  IaR3 + Ib(-\frac{1}{Kb}+R3) = 0
+\end{equation}
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+    {\bf Name} & {\bf Value [A or V]} \\ \hline
+    \input{ValoresNos.tex}
+  \end{tabular}
+  \caption{Operating point. A variable preceded by @ is of type {\em current}
+    and expressed in Ampere; other variables are of type {\it voltage} and expressed in
+    Volt.}
+  \label{tab:nos}
+\end{table}
+
+
+\begin{equation}
   Ri(t) + v_O(t) = v_I(t).
   \label{eq:kvl}
 \end{equation}
