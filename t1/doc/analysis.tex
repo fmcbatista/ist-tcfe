@@ -1,16 +1,29 @@
 \section{Theoretical Analysis}
 \label{sec:analysis}
 
-In this section, the circuit shown in Figure~\ref{fig:T1_Circuit} is analysed theoretically, in terms of its nodes' voltages and meshes' equations.
-In order to do so, we first had to number and identify all the nodes of the given circuit. In Figure~\ref{fig:T1_Nodes} we can see the distribution of such nodes.
+In this section, the circuit shown in Figure~\ref{fig:T1Circuit} is analysed theoretically, in terms of its nodes' voltages and meshes' equations.
+In order to do so, we first had to number and identify all the nodes of the given circuit. In Figure~\ref{fig:T1Nodes} we can see the distribution of such nodes.
 
 \begin{figure}[h] \centering
-\includegraphics[width=0.4\linewidth]{T1_Nodes.pdf}
+\includegraphics[width=0.4\linewidth]{T1Nodes.pdf}
 \caption{Circuit Node Identification.}
-\label{fig:T1_Nodes}
+\label{fig:T1Nodes}
 \end{figure}
 
-This analysis was performed using the Mesh Method and the Node Method. In the Mesh Analysis we used the Kirchoff Voltage Law (KVL) and an additional equation to solve for the currents in the meshes. On the other hand, the Node Analysis was done with the Kirchoff Current Law (KCL) applied to the nodes that weren't connected to voltage sources. A supernode was also considered on this analysis in order to simplify the calculation.  
+\vspace{1.0cm}
+
+This analysis was performed using the Mesh Method and the Node Method. 
+In the Mesh Analysis we used the Kirchoff Voltage Law (KVL) and an additional equation to solve for the currents in the essential meshes. These currents' directions are represented in Figure~\ref{fig:T1Meshes}.
+
+\vspace{6.0cm}
+
+\begin{figure}[h] \centering
+\includegraphics[width=0.4\linewidth]{T1Meshes.pdf}
+\caption{Essential meshes' current direction.}
+\label{fig:T1Meshes}
+\end{figure}
+
+On the other hand, the Node Analysis was done with the Kirchoff Current Law (KCL) applied to the nodes that weren't connected to voltage sources. A supernode was also considered on this analysis in order to simplify the calculation. A supernode was defined by combining the nodes 4 and 7 as these are connected to a voltage source. The supernode equation is found on (5).
 The system of equations obtained in each method are presented in the following expressions.
 
 \begin{equation}
@@ -52,6 +65,8 @@ The system of equations obtained in each method are presented in the following e
 \begin{equation}
   IaR3 + Ib(-\frac{1}{Kb}+R3) = 0
 \end{equation}
+
+\vspace{5.0cm}
 
 After obtaining the system of equations, the Octave tool was used to run all the necessary calculation so as to obtain the theoretical results that are displayed in Table~\ref{tab:nos} and Table~\ref{tab:malhas}.
 

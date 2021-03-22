@@ -26,7 +26,7 @@ ngspice: ngspice.log
 	$(foreach i, $(NGSFIGPS), ps2pdf $i;)
 	
 	
-ngspice.log: ../sim/circuitoteste.net
+ngspice.log: ../sim/circuitoteste.cir
 	ngspice -b $< -o $@
 	
 

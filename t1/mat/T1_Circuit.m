@@ -48,5 +48,5 @@ i2=H(2);
 i3=H(3);
 
 fq=fopen('/home/fmcb/ist-tcfe/t1/doc/ValoresMalhas.tex',"w");
-fprintf(fq,"I_a & %f \\\\ \\hline\nI_b & %f \\\\ \\hline\nI_c & %f \\\\ \\hline",i1,i2,i3);
+fprintf(fq,"Ia & %f \\\\ \\hline\nIb & %f \\\\ \\hline\nIc & %f \\\\ \\hline",i1,i2,i3);
 fclose(fq);
