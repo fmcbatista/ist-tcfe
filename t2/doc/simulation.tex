@@ -1,0 +1,26 @@
+\section{Simulation Analysis}
+\label{sec:simulation}
+
+\subsection{Operating Point Analysis}
+
+Following our theoretical analysis, the circuit was simulated in the Ngspice software, which returned the values of the voltage for each node. These values, that are shown in Table~\ref{tab:op}, allowed us to easily calculate the electrical currents. 
+The inputs given to the Ngspice were the values of the resistors, as well as the nodes to which they are connected (the positive being followed by the negative), and their values. Moreover, the independent current and voltage source, as well as the values for Kb and Kc, which are fundamental to the controlled sources, are also introduced. 
+In order for the current that commands the controlled voltage to flow from the positive to the negative node, the creation of a control, ficticious node was necessary to sense this current.
+When compared, the results of the theoretical analysis and the simulated ones are approximately the same, with tiny differences that might be owed to factors such as Octave rounding errors in the matrix equations.
+
+\vspace{7.0cm}
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+    {\bf Name} & {\bf Value [A or V]} \\ \hline
+    \input{op_TAB}
+  \end{tabular}
+  \caption{Operating point. Simulated Values for voltage (V) and current (A) using Ngspice.}
+  \label{tab:op}
+\end{table}
+
+
+
+
