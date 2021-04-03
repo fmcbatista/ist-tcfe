@@ -1,27 +1,20 @@
 Circuito_t2
 
-R1 1 2 1.049124789255k
-R2 3 2 2.057037410185k
-R3 2 5 3.145866332601k
-R4 0 5 4.120366732090k
-R5 5 6 3.092796241346k
-R6 0 4 2.078623037946k
-R7 7 8 1.047211798510k
+.INCLUDE ngspice_values.txt
 
-C  6 8 1.031098537369u
 
-*Independent Sources
 
-Vs 1 0 DC 5.134163934742
-V3 4 7 DC 0
 
-*Dependent Sources
 
-Gb 6 3 (2,5) 7.2690889775598m
-Hc 5 8 V3 8.04305881912k
 
 .control
  op
+ 
+ echo "Operating Point Analysis"
+ 
+ print  V(6)-V(8) > Vx_p2.txt
+ 
+ 
  print all
  .endc
  .end
