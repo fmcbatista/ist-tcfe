@@ -3,24 +3,59 @@
 
 \subsection{Operating Point Analysis}
 
-Following our theoretical analysis, the circuit was simulated in the Ngspice software, which returned the values of the voltage for each node. These values, that are shown in Table~\ref{tab:op}, allowed us to easily calculate the electrical currents. 
-The inputs given to the Ngspice were the values of the resistors, as well as the nodes to which they are connected (the positive being followed by the negative), and their values. Moreover, the independent current and voltage source, as well as the values for Kb and Kc, which are fundamental to the controlled sources, are also introduced. 
-In order for the current that commands the controlled voltage to flow from the positive to the negative node, the creation of a control, ficticious node was necessary to sense this current.
-When compared, the results of the theoretical analysis and the simulated ones are approximately the same, with tiny differences that might be owed to factors such as Octave rounding errors in the matrix equations.
-
-\vspace{7.0cm}
+Following our theoretical analysis, the circuit was simulated in the Ngspice software. 
+In step (1), we were asked to simulate the operating point for t<0, in order to find the voltages in all nodes and the currents in all branches. The results are shown in Table~\ref{tab:alinea1}.
 
 \begin{table}[h]
   \centering
   \begin{tabular}{|l|r|}
     \hline    
     {\bf Name} & {\bf Value [A or V]} \\ \hline
-    \input{op_TAB}
+    \input{op_TAB1}
   \end{tabular}
-  \caption{Operating point. Simulated Values for voltage (V) and current (A) using Ngspice.}
-  \label{tab:op}
+  \caption{Operating point for t<0. Simulated Values for voltage (V) and current (A) using Ngspice.}
+  \label{tab:alinea1}
 \end{table}
 
+Then, in step (2), we simulated the operating point considering that the voltage of the source in the instant t=0 was null and replacing the capacitor with a voltage source that was equal to V6-V8, being this values the voltages in the capacitor's nodes that were obtained in (1). This step was needed because... The results are shown in Table~\ref{tab:alinea2}.
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+    {\bf Name} & {\bf Value [A or V]} \\ \hline
+    \input{op_TAB2}
+  \end{tabular}
+  \caption{Operating point for Vs=0 (instant t=0). Simulated Values for voltage (V) and current (A) using Ngspice.}
+  \label{tab:alinea2}
+\end{table}
+
+In step (3), we simulated the natural response of the circuit. In Figure~\ref{fig:plot(3)} we can find the plot of v6 in the interval [0, 20]ms.
+
+\begin{figure}[h] \centering
+\includegraphics[width=0.8\linewidth]{forced.eps}
+\caption{Plot of v6(t) in the interval [0, 20]ms.}
+\label{fig:plot(3)}
+\end{figure}
+
+Later, in step (4), we were asked to simulate the natural and forced response on node 6 by repeating step (3) with vs(t) as given in Equation~\ref{eq:vs} and f=1kHz. In Figure~\ref{fig:plots(4)} and Figure~\ref{fig:plotf(4)} we can see the plot of both the stimulus and the response.
+
+\begin{equation}
+  V_{s}(t) = sin(2 \pi f t),
+  \label{eq:vs}
+\end{equation}
+
+\begin{figure}[h] \centering
+\includegraphics[width=0.8\linewidth]{forced.eps}
+\caption{Plot of v6(t) in the interval [0, 20]ms.}
+\label{fig:plots(4)}
+\end{figure}
+
+\begin{figure}[h] \centering
+\includegraphics[width=0.8\linewidth]{forced.eps}
+\caption{Plot of v6(t) in the interval [0, 20]ms.}
+\label{fig:plotr(4)}
+\end{figure}
 
 
 

@@ -23,6 +23,12 @@ Hc 5 8 V3 8.04305881912k
 
 .control
  op
+ 
+ echo "***********************"
+ echo "Operating Point for t<0"
+ echo "***********************"
+ echo "op_TAB1"
  print all
+ echo "op_END1"
  .endc
  .end
