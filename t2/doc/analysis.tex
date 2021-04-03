@@ -29,7 +29,45 @@ After this, in step (2), we determined the equivalent resistance as seen from th
   \label{tab:TA2}
 \end{table}
 
-Later, in step (3), 
+Later, in step (3), we used the value of the equivalent resistant calculated in point (2) to find the natural solution of v6. Knowing that "\tau" is calculated multiplying Req with C(capacitance of the capacitor), in Equation~\ref{eq:natsol} we find the formula required to calculate the natural solution we wanted. 
+
+\begin{equation}
+  V_{6n}(t) = V_{x}e^{-\frac{t}{\tau}},
+  \label{eq:natsol}
+\end{equation}
+
+Also the solution is ploted in Figure~\ref{figure:plotA(4)} where the x-axis corresponds to time, 't', expressed in [ms] and the y-axis corresponds to the natural solution of v6, 'v6n', expressed in [V].
+
+\begin{figure}[h] \centering
+\includegraphics[width=0.8\linewidth]{forced.eps}
+\caption{Plot of v6n(t) in the interval [0, 20]ms.}
+\label{fig:plotA(4)}
+\end{figure}
+
+In step (4), the forced solution v6f(t) was determined for f=1KHz and for 't' in the interval [0,20]ms. Moreover, the capacitance was replaced by the impedance, 'Z', and Vs was considered equal to one. The complex amplitudes in the nodes are shown in Table~\ref{tab:anal4}.
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+    {\bf Nodes} & {\bf Complex Amplitudes} \\ \hline
+    \input{op_TAB2}
+  \end{tabular}
+  \caption{Complex amplitudes in the nodes, expressed in Volt.}
+  \label{tab:anal4}
+\end{table}
+
+
+
+
+
+
+
+
+
+
+
+
 
 This analysis was performed using the Mesh Method and the Node Method. 
 In the Mesh Analysis we used the Kirchoff Voltage Law (KVL) and an additional equation to solve for the currents in the essential meshes. These currents' directions are represented in Figure~\ref{fig:T1Meshes}.
