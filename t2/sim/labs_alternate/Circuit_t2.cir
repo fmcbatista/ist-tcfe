@@ -13,7 +13,14 @@ Circuito_t2
  echo "Operating Point Analysis"
  
  print  V(6)-V(8) > Vx_p2.txt
- 
+ echo "ia"
+ print (v(2)-v(1))/1.0491248k
+ echo "ib"
+ print (v(3)-v(2))/2.057037k
+ echo "ic"
+ print -v(7)/2.078624k
+ echo "id"
+ print (v(6)-v(5))/3.092796k - (v(3)-v(2))/2.057037k
  
  print all
  .endc
