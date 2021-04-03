@@ -1,0 +1,42 @@
+Circuit_t2.3
+
+.options savecurrents
+
+R1 1 2 1.049124789255k
+R2 3 2 2.057037410185k
+R3 2 5 3.145866332601k
+R4 5 GND 4.120366732090k
+R5 5 6 3.092796241346k
+R6 GND 4 2.078623037946k
+R7 7 8 1.047211798510k
+Vs 1 GND DC sin(0 1 1k 0 0 0)
+
+V3 4 7 DC 0
+Gb 6 3 2 5 7.2690889775598m
+Hc 5 8 V3 8.04305881912k
+
+
+C1 6 8 1.031098537369u
+.ic v(6)=8.7098  v(8)=0
+
+.end
+
+.control
+
+
+
+op
+
+echo "Transient Analysis"
+
+tran 1e-6 20ms
+
+plot v(6) v(1)
+
+hardcopy trans.ps v(6) v(1)
+
+
+.endc
+
+
+.end
