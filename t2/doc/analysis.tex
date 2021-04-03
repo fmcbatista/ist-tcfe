@@ -9,14 +9,27 @@ In step (1), first of all, we used the nodal method to determine the voltages in
   \centering
   \begin{tabular}{|l|r|}
     \hline    
-    {\bf Nodes} & {\bf Value [V]} \\ \hline
+    {\bf Nodes and branches} & {\bf Value [V]/[A]} \\ \hline
     \input{ValoresNos.tex}
   \end{tabular}
-  \caption{Theoretical voltage values for each node, expressed in Volt.}
-  \label{tab:nos}
+  \caption{Theoretical voltage values for each node, expressed in Volt, and current values for each branch, expressed in Ampere.}
+  \label{tab:TA1}
 \end{table}
 
-\vspace{1.0cm}
+After this, in step (2), we determined the equivalent resistance as seen from the capacitor terminals. In order to do so, we followed the professor's sugestion: ... The computed results can be found in Table~\ref{tab:TA2}.
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+    {\bf Computed Results} & {\bf Values} \\ \hline
+    \input{ValoresNos.tex}
+  \end{tabular}
+  \caption{Computed results: voltage expressed in Volt, current in Ampere and resistence in Ohm.}
+  \label{tab:TA2}
+\end{table}
+
+Later, in step (3), 
 
 This analysis was performed using the Mesh Method and the Node Method. 
 In the Mesh Analysis we used the Kirchoff Voltage Law (KVL) and an additional equation to solve for the currents in the essential meshes. These currents' directions are represented in Figure~\ref{fig:T1Meshes}.
