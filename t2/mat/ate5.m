@@ -188,4 +188,102 @@ print(f5,"Total_Solution.eps","-depsc");
 	
 	
 	
+	
+	
+	
+%freq response 6
+
+f = logspace(-1,6,200);
+
+
+Vs = 1;
+
+
+
+for i= 1:length(f)
+
+w = 2*pi*f(i);
+Zc = 1/(j*w*C);
+
+U = [1/R1,-(1/R1)-(1/R2)-(1/R3),1/R2,1/R3,0,0,0; 0,(Kb+1/R2),-1/R2,-Kb,0,0,0;0,Kb,0,(-Kb-(1/R5)),(1/R5+1/Zc),0,-(1/Zc); 1,0,0,0,0,0,0; 0,0,0,1,0,(Kd/R6),-1; 0,0,0,0,0,(1/R6 +1/R7), -(1/R7); 0,1/R3,0,-(1/R3)-(1/R4)-(1/R5),(1/R5 +1/Zc),1/R7, (-(1/R7)-(1/Zc))];
+
+Y = inv(U);
+W = [0;0;0;Vs;0;0;0];	
+
+K = Y*W;
+
+v6(i)= K(5);
+vs(i)= K(1);
+vc(i)= K(5)-K(7);
+
+
+endfor
+
+
+for i = 1:length(f)
+
+v6amp(i)= 20*log10(abs(v6(i)));
+v6phs(i)= (180/pi)*angle(v6(i));
+vsamp(i)= 20*log10(abs(vs(i)));
+vsphs(i)= (180/pi)*angle(vs(i));
+vcamp(i)= 20*log10(abs(vc(i)));
+vcphs(i)= (180/pi)*angle(vc(i));
+
+
+
+endfor
+
+
+
+f6 = figure();
+
+semilogx(f,v6amp,"r");
+hold on
+
+semilogx(f,vcamp,"g");
+hold on
+
+semilogx(f,vsamp,"c");
+hold on
+
+ 
+
+xlabel('f[Hz]');
+
+ylabel('V[dB]');
+
+title("Frequency Response- Amplitude");
+
+legend('v6amp','vcamp','vsamp','Location','Northeast');
+
+print(f6,"Frequency_Response_Amplitude.eps","-depsc");
+
+
+
+
+
+
+f7 = figure();
+
+semilogx(f,v6phs,"r");
+hold on
+
+semilogx(f,vcphs,"g");
+hold on
+
+semilogx(f,vsphs,"c");
+hold on
+
+
+xlabel('f[Hz]');
+
+ylabel('Angle[degrees]');
+
+title("Frequency Response- Phase");
+
+legend('v6phs','vcphs','vsphs','Location','Northeast');
+
+print(f6,"Frequency_Response_Phase.eps","-depsc");
+
+	
 
