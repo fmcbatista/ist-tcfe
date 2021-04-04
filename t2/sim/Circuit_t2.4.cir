@@ -15,7 +15,7 @@ Circuit_t2.4
 
 op
 
-echo "Transient Analysis"
+echo "Forced solution-Transient Analysis"
 
 tran 1e-6 20ms
 

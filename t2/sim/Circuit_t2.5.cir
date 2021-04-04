@@ -1,0 +1,51 @@
+Circuit_t2.5
+
+.options savecurrents
+
+.INCLUDE ngspice_5.txt
+.ic v(6)=8.7098  v(8)=0
+
+.end
+
+.control
+
+
+
+set hcopypscolor=1
+set color0=white
+set color1=black
+set color2=red
+set color3=blue
+set color4=violet
+set color5=rgb:4/8/0
+set color6=rgb:4/0/0
+
+
+echo "Frequency Response"
+
+ac dec 200 0.1 1MEG
+
+
+hardcopy ampresponse.ps db(v(6)) db(v(1))
+
+echo amplituderesponse_FIG
+
+Let phs_6 = (180/PI) * ph(v(6))
+Let phs_s = (180/PI) * ph(v(1))
+ 
+hardcopy phaseresponse.ps phs_6 phs_s
+ 
+echo phaseresponse_FIG
+ 
+ 
+ 
+ quit
+ 
+ 
+ .endc
+ 
+ 
+ .end
+
+
+

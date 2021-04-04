@@ -23,13 +23,13 @@ E = [Vs;0;0;0;0;0;0];
 
 D = B*E;
 
-sprintf("%.8f\n",D);
+sprintf("%.8f\n",D)
 
 fp=fopen('/home/fmcb/ist-tcfe/t2/doc/TA1.tex',"w");
 fprintf(fp,"v1 & %f \\\\ \\hline\nv2 & %f \\\\ \\hline\nv3 & %f \\\\ \\hline\nv4 & %f \\\\ \\hline\nv5 & %f \\\\ \\hline\nv6 & %f \\\\ \\hline\nv7 & %f \\\\ \\hline\nv8 & %f \\\\ \\hline",D(1),D(2),D(3),null,D(4),D(5),D(6),D(7));
 fclose(fp);
 
-fp2 = fopen('/home/fmcb/ist-tcfe/t2/sim/ngspice_values.txt',"w");
+fp2 = fopen('ngspice_values.txt',"w");
 fprintf(fp2, "R1 1 2 %f\n",values(1));
 fprintf(fp2, "R2 3 2 %f\n",values(2));
 fprintf(fp2, "R3 2 5 %f\n",values(3));
@@ -47,7 +47,7 @@ fclose(fp2);
 
 %DADOS PARA O NGSPICE 2
 
-fp3 = fopen('/home/fmcb/ist-tcfe/t2/sim/ngspice_2.txt',"w");
+fp3 = fopen('ngspice_2.txt',"w");
 fprintf(fp3, "R1 GND 2 %f\n",values(1));
 fprintf(fp3, "R2 3 2 %f\n",values(2));
 fprintf(fp3, "R3 2 5 %f\n",values(3));
@@ -84,7 +84,7 @@ fclose(fp);
 
 
 %theoretical analysis 3
-fp4 = fopen('/home/fmcb/ist-tcfe/t2/sim/ngspice_3.txt',"w");
+fp4 = fopen('ngspice_3.txt',"w");
 fprintf(fp4, "R1 1 2 %f\n",values(1));
 fprintf(fp4, "R2 3 2 %f\n",values(2));
 fprintf(fp4, "R3 2 5 %f\n",values(3));
@@ -122,7 +122,7 @@ title("Natural solution");
 print(f1,"natural_solution.eps","-depsc");
 
 
-%forced solution 4
+%4forced solution
 
 w = 2*pi*1000;
 Zc = 1/(j*w*C);
@@ -151,7 +151,7 @@ print(f2,"forced_solution.eps","-depsc");
 
 
 
-fp5 = fopen('/home/fmcb/ist-tcfe/t2/sim/ngspice_4.txt',"w");
+fp5 = fopen('ngspice_4.txt',"w");
 fprintf(fp5, "R1 1 2 %f\n",values(1));
 fprintf(fp5, "R2 3 2 %f\n",values(2));
 fprintf(fp5, "R3 2 5 %f\n",values(3));
@@ -166,7 +166,7 @@ fprintf(fp5, "Hc 5 8 V3 %f\n",values(10));
 fprintf(fp5, "Gb 6 3 (2,5) %f\n",values(9));
 fclose(fp5);
 
-%total solution 5
+%total solution
 
 t = -5e-3:2e-6:20e-3;
 moment1 = t<0; moment2 = t>=0;
@@ -192,6 +192,24 @@ print(f5,"Total_Solution.eps","-depsc");
 	
 	
 %freq response 6
+
+
+
+
+fp6 = fopen('ngspice_5.txt',"w");
+fprintf(fp6, "R1 1 2 %f\n",values(1));
+fprintf(fp6, "R2 3 2 %f\n",values(2));
+fprintf(fp6, "R3 2 5 %f\n",values(3));
+fprintf(fp6, "R4 GND 5 %f\n",values(4));
+fprintf(fp6, "R5 5 6 %f\n",values(5));
+fprintf(fp6, "R6 GND 4 %f\n",values(6));
+fprintf(fp6, "R7 7 8 %f\n",values(7));
+fprintf(fp6, "C 6 8 %f\n",values(11));
+fprintf(fp6, "Vs 1 GND 1 ac 1 sin(0 1 1k) \n");
+fprintf(fp6, "V3 4 7 DC 0 \n");
+fprintf(fp6, "Hc 5 8 V3 %f\n",values(10));
+fprintf(fp6, "Gb 6 3 (2,5) %f\n",values(9));
+fclose(fp6);
 
 f = logspace(-1,6,200);
 
