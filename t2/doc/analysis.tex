@@ -16,7 +16,15 @@ In step (1), first of all, we used the nodal method to determine the voltages in
   \label{tab:TA1}
 \end{table}
 
-After this, in step (2), we determined the equivalent resistance as seen from the capacitor terminals. In order to do so, we followed the professor's sugestion: ... The computed results can be found in Table~\ref{tab:TA2}.
+After this, in step (2), we determined the equivalent resistance as seen from the capacitor terminals. In order to do so, we followed the professor's sugestion: In this section of the analysis, the voltage difference Vx is computed and will be used as a boundary condition so as to allow us to solve the following...(!nao percebi muito bem, por favor acabem!)... 
+
+\begin{equation}
+  \tau = R_{eq}C,
+  \label{eq:tau}
+\end{equation}
+
+
+The computed results can be found in Table~\ref{tab:TA2}.
 
 \begin{table}[h]
   \centering
@@ -29,7 +37,7 @@ After this, in step (2), we determined the equivalent resistance as seen from th
   \label{tab:TA2}
 \end{table}
 
-Later, in step (3), we used the value of the equivalent resistant calculated in point (2) to find the natural solution of v6. Knowing that "\tau" is calculated multiplying Req with C(capacitance of the capacitor), in Equation~\ref{eq:natsol} we find the formula required to calculate the natural solution we wanted. 
+Later, in step (3), we used the value of the equivalent resistant calculated in point (2) to find the natural solution of v6. Knowing that "\tau" is calculated by the equation~\ref{tau}, in Equation~\ref{eq:natsol} we find the formula required to calculate the natural solution we wanted. 
 
 \begin{equation}
   V_{6n}(t) = V_{x}e^{-\frac{t}{\tau}},
