@@ -16,7 +16,7 @@ In step (1), first of all, we used the nodal method to determine the voltages in
   \label{tab:TA1}
 \end{table}
 
-After this, in step (2), we determined the equivalent resistance as seen from the capacitor terminals. In order to do so, we followed the professor's sugestion: In this section of the analysis, the voltage difference Vx is computed and will be used as a boundary condition so as to allow us to solve the following...(!nao percebi muito bem, por favor acabem!)... 
+After this, in step (2), we determined the equivalent resistance as seen from the capacitor terminals. In order to do so, we followed the professor's sugestion. Therefore, in this section of the analysis, the capacitor was replaced by a voltage source Vx. Ix and Vx were calculated using Octave. After this, the value of the equivalent resistance was computed and determined. These procedures were necessary because they allowed us to calculate the time constant (\tau) without which we would no be able to performe all the theoretical analisys in the following sections. 
 
 \begin{equation}
   \tau = R_{eq}C,
@@ -73,7 +73,7 @@ Then, in step (5), we determined the final total solution v6(t) by converting th
 \label{fig:plotA(5)}
 \end{figure}
 
-Finally, in step (6), we calculted the frequency responses vc(f) and v6(f) for frequency in the interval [0.1, 1M]Hz. The functions vs(f), vc(f) and v6(f) are represented in two plots: one of amplitude frequency response, represented in Figure~\ref{fig:plotA(61)} and the other of phase responde, shown in Figure~\ref{fig:plotA(62)}. Note that in both graphs, frequency logscale magnitude is in dB and phase in degrees.
+Finally, in step (6), we calculted the frequency responses vc(f) and v6(f) for frequency in the interval [0.1, 1M]Hz. The functions vs(f), vc(f) and v6(f) are represented in two plots: one of amplitude frequency response, represented in Figure~\ref{fig:plotA(61)} and the other of phase response, shown in Figure~\ref{fig:plotA(62)}. Note that in both graphs, frequency logscale magnitude is in dB and phase in degrees.
 
 \begin{figure}[h] \centering
 \includegraphics[width=0.8\linewidth]{Frequency_Response_Amplitude.eps}
