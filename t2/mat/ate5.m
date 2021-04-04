@@ -166,7 +166,7 @@ fprintf(fp5, "Hc 5 8 V3 %f\n",values(10));
 fprintf(fp5, "Gb 6 3 (2,5) %f\n",values(9));
 fclose(fp5);
 
-%total solution
+%total solution 5
 
 t = -5e-3:2e-6:20e-3;
 moment1 = t<0; moment2 = t>=0;
