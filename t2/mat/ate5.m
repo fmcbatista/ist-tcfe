@@ -14,6 +14,7 @@ Vs = values(8)
 Kb = values(9)
 Kd = values(10)
 C = values(11)
+null=0;
 A = [1,0,0,0,0,0,0 ; -(1/R1),(1/R3)+(1/R2)+(1/R1),-(1/R2),-(1/R3),0,0,0 ; 0,(Kb+(1/R2)),(-1/R2),(-Kb),0,0,0 ; 0,(1/R3),0,(-(1/R4)-(1/R5)-(1/R3)),(1/R5),(1/R7),-(1/R7) ; 0,(-Kb),0,(Kb+(1/R5)),(-1/R5),0,0 ; 0,0,0,0,0,((1/R6)+(1/R7)),(-1/R7);0,0,0,1,0,Kd/R6,-1];
 
 B = inv(A);
@@ -22,17 +23,8 @@ E = [Vs;0;0;0;0;0;0];
 
 D = B*E;
 
-v1=D(1);
-v2=D(2);
-v3=D(3);
-v4=0;
-v5=D(4);
-v6=D(5);
-v7=D(6);
-v8=D(7);
-
 fp=fopen('/home/fmcb/ist-tcfe/t2/doc/TA1.tex',"w");
-fprintf(fp,"v1 & %f \\\\ \\hline\nv2 & %f \\\\ \\hline\nv3 & %f \\\\ \\hline\nv4 & %f \\\\ \\hline\nv5 & %f \\\\ \\hline\nv6 & %f \\\\ \\hline\nv7 & %f \\\\ \\hline\nv8 & %f \\\\ \\hline",v1,v2,v3,v4,v5,v6,v7,v8);
+fprintf(fp,"v1 & %f \\\\ \\hline\nv2 & %f \\\\ \\hline\nv3 & %f \\\\ \\hline\nv4 & %f \\\\ \\hline\nv5 & %f \\\\ \\hline\nv6 & %f \\\\ \\hline\nv7 & %f \\\\ \\hline\nv8 & %f \\\\ \\hline",D(1),D(2),D(3),null,D(4),D(5),D(6),D(7));
 fclose(fp);
 
 fp2 = fopen('ngspice_values.txt',"w");
@@ -82,7 +74,11 @@ T = inv(H);
 X = T*Z;
 
 Req = (X(4)-X(6))/X(9);
-sprintf("%.6f\n",X)
+sprintf("%.6f\n",X);
+
+fp=fopen('/home/fmcb/ist-tcfe/t2/doc/TA2.tex',"w");
+fprintf(fp,"v1 & %f \\\\ \\hline\nv2 & %f \\\\ \\hline\nv3 & %f \\\\ \\hline\nv4 & %f \\\\ \\hline\nv5 & %f \\\\ \\hline\nv6 & %f \\\\ \\hline\nv7 & %f \\\\ \\hline\nv8 & %f \\\\ \\hline\nIx & %f \\\\ \\hline\nVx & %f \\\\ \\hline\nReq & %f \\\\ \\hline",null,X(1),X(2),null,X(3),X(4),X(5),X(6),,,Req);
+fclose(fp);
 
 
 %theoretical analysis 3
