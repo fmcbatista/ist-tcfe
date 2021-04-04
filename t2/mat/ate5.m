@@ -1,9 +1,9 @@
 pkg load control
 output_precision(10)
- format long
- fp = fopen('Values.txt',"r");
- values = dlmread(fp,'\n');
- R1 = values(1)
+format long
+fp = fopen('Values.txt',"r");
+values = dlmread(fp,'\n');
+R1 = values(1)
 R2 = values(2)
 R3 = values(3)
 R4 = values(4)
@@ -21,6 +21,18 @@ B = inv(A);
 E = [Vs;0;0;0;0;0;0];
 
 D = B*E;
+
+v1=D(1);
+v2=D(2);
+v3=D(3);
+v4=D(4);
+v5=D(5);
+v6=D(6);
+v7=D(7);
+
+fp=fopen('/home/fmcb/ist-tcfe/t2/doc/TA1.tex',"w");
+fprintf(fp,"v1 & %f \\\\ \\hline\nv2 & %f \\\\ \\hline\nv3 & %f \\\\ \\hline\nv4 & %f \\\\ \\hline\nv5 & %f \\\\ \\hline\nv6 & %f \\\\ \\hline\nv7 & %f \\\\ \\hline",v1,v2,v3,v4,v5,v6,v7);
+fclose(fp);
 
 fp2 = fopen('ngspice_values.txt',"w");
 fprintf(fp2, "R1 1 2 %f\n",values(1));
