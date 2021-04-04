@@ -1,0 +1,18 @@
+Circuitot22
+
+.INCLUDE ngspice2.txt
+
+.INCLUDE Vxp2.tex
+
+.control
+ op
+ 
+ echo "op2TAB"
+ print all
+ print v(6)-v(8)
+ print (v(6)-v(8))/vx#branch
+ echo "op2END"
+ 
+ quit
+ .endc
+ .end

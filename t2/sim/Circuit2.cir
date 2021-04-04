@@ -1,0 +1,20 @@
+Circuitot2
+
+.INCLUDE ngspicevalues.txt
+
+.control
+ op
+ 
+ echo "************************"
+ echo "Operating Point Analysis"
+ echo "************************"
+ 
+ print  V(6)-V(8) > ../sim/Vxp2.tex
+ 
+ echo "op1TAB"
+ print all
+ echo "op1END"
+ 
+ quit
+ .endc
+ .end

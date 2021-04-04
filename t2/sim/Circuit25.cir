@@ -1,9 +1,9 @@
-Circuit_t2.5
+Circuit25
 
 .options savecurrents
 
-.INCLUDE ngspice_5.txt
-.ic v(6)=8.7098  v(8)=0
+.INCLUDE ngspice5.txt
+.ic v(6)=8.739810  v(8)=0
 
 .end
 
@@ -30,22 +30,15 @@ hardcopy ampresponse.ps db(v(6)) db(v(1))
 
 echo amplituderesponse_FIG
 
-Let phs_6 = (180/PI) * ph(v(6))
-Let phs_s = (180/PI) * ph(v(1))
+Let phs6 = (180/PI) * ph(v(6))
+Let phsS = (180/PI) * ph(v(1))
  
-hardcopy phaseresponse.ps phs_6 phs_s
+hardcopy phaseresponse.ps phs6 phsS
  
 echo phaseresponse_FIG
  
  
  
- quit
- 
- 
- .endc
- 
- 
- .end
-
-
-
+quit
+.endc
+.end

@@ -1,11 +1,11 @@
-Circuit_t2.3
+Circuit23
 
 .options savecurrents
 
-.INCLUDE ngspice_3.txt
+.INCLUDE ngspice3.txt
 
 
-.ic v(6)=8.709810489  v(8)=0
+.ic v(6)=8.739810489  v(8)=0
 
 .end
 
@@ -21,10 +21,8 @@ tran 1e-6 20ms
 
 plot v(6)
 
-hardcopy trans.ps v(6)
+hardcopy naturalsolution.ps v(6)
 
-
+quit
 .endc
-
-
 .end

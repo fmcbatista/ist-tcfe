@@ -47,7 +47,7 @@ Later, in step (3), we used the value of the equivalent resistant calculated in 
 Also the solution is ploted in Figure~\ref{figure:plotA(4)} where the x-axis corresponds to time, t, expressed in [ms] and the y-axis corresponds to the natural solution of v6, 'v6n', expressed in [V].
 
 \begin{figure}[h] \centering
-\includegraphics[width=0.8\linewidth]{forced_solution.eps}
+\includegraphics[width=0.8\linewidth]{forcedsolution.eps}
 \caption{Plot of v6n(t) in the interval [0, 20]ms.}
 \label{fig:plotA(4)}
 \end{figure}
@@ -68,23 +68,26 @@ In step (4), the forced solution v6f(t) was determined for f=1KHz and for t in t
 Then, in step (5), we determined the final total solution v6(t) by converting the phasors to real time functions for f=1KHz, and superimposing the natural and forced solutions, just like it was asked by the professor. In Figure~\ref{fig:plotA(5)} are plotted both vs(t) and v6(t) in the interval [-5, 20]ms.
 
 \begin{figure}[h] \centering
-\includegraphics[width=0.8\linewidth]{Total_Solution.eps}
+\includegraphics[width=0.8\linewidth]{TotalSolution.eps}
 \caption{Plot of v6(t) and vs(t) in the interval [-5, 20]ms.}
 \label{fig:plotA(5)}
 \end{figure}
 
-Finally, in step (6), we calculted the frequency responses vc(f) and v6(f) for frequency in the interval [0.1, 1M]Hz. The functions vs(f), vc(f) and v6(f) are represented in two plots: one of amplitude frequency response, represented in Figure~\ref{fig:plotA(61)} and the other of phase response, shown in Figure~\ref{fig:plotA(62)}. Note that in both graphs, frequency logscale magnitude is in dB and phase in degrees.
+Finally, in part 6 of our theoretical analysis, we attempted to figure out the frequency response of the circuit, computing the magnitude and the phase changes with the frequency of both the source voltage, the voltage across the capacitor and the voltage in node 6, and then proceding to plot them.
+The source's magnitude and phase do not hinge on the frequency values, so they are expected to remain constant as it is verified in Figure~\ref{fig:plotA(61)} and Figure~\ref{fig:plotA(62)}.
 
 \begin{figure}[h] \centering
-\includegraphics[width=0.8\linewidth]{Frequency_Response_Amplitude.eps}
+\includegraphics[width=0.8\linewidth]{FrequencyResponseAmplitude.eps}
 \caption{Plot of amplitude frequency response (for vs(f), vc(f) and v6(f)) in the interval [0.1, 1M]Hz.}
 \label{fig:plotA(61)}
 \end{figure}
 
 \begin{figure}[h] \centering
-\includegraphics[width=0.8\linewidth]{Frequency_Response_Phase.eps}
+\includegraphics[width=0.8\linewidth]{FrequencyResponsePhase.eps}
 \caption{Plot of phase response (for vs(f), vc(f) and v6(f)) in the interval [0.1, 1M]Hz.}
 \label{fig:plotA(62)}
 \end{figure}
 
-How and why they differ??....
+At low frequencies, the capacitor is able to charge up until its voltage reaches a value close to the input's. Therefore, the potential difference across the capacitor rises to a significant value. The voltage at node 6 and the voltage in the capacitor are showcased in the Figure~\ref{fig:plotA(61)} When this is the case, the current flow to the capacitor plummets to a value close to zero, meaning that the circuit will behave as an open circuit. By the same reasoning, it can be concluded that the phase will also behave in the same way as the input's, without showing great disparity, as is shown in Figure~\ref{fig:plotA(62)}. 
+On the other hand, as the frequency values increase, the circuit will begin to act as a short circuit (shunt). At this point, the voltage drop in the capacitor's terminals is almost null. When converting the amplitude values from V into dB, a number much smaller than 1 turns into a magnitude that is negative despite having a great absolute value. This is the reason that leads to the visible slump corresponding to vc in Figure~\ref{fig:plotA(61)}. Due to the huge frequency of the source, the phase difference of vc and v6 also become notable, as shown in Figure~\ref{fig:plotA(62)}.
+

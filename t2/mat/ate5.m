@@ -1,7 +1,8 @@
 pkg load control
 output_precision(10)
 format long
-fp = fopen('Values.txt',"r");
+
+fp = fopen('/home/fmcb/ist-tcfe/t2/mat/Values.txt',"r");
 values = dlmread(fp,'\n');
 R1 = values(1)
 R2 = values(2)
@@ -29,7 +30,7 @@ fp=fopen('/home/fmcb/ist-tcfe/t2/doc/TA1.tex',"w");
 fprintf(fp,"v1 & %f \\\\ \\hline\nv2 & %f \\\\ \\hline\nv3 & %f \\\\ \\hline\nv4 & %f \\\\ \\hline\nv5 & %f \\\\ \\hline\nv6 & %f \\\\ \\hline\nv7 & %f \\\\ \\hline\nv8 & %f \\\\ \\hline",D(1),D(2),D(3),null,D(4),D(5),D(6),D(7));
 fclose(fp);
 
-fp2 = fopen('/home/fmcb/ist-tcfe/t2/sim/ngspice_values.txt',"w");
+fp2 = fopen('/home/fmcb/ist-tcfe/t2/sim/ngspicevalues.txt',"w");
 fprintf(fp2, "R1 1 2 %f\n",values(1));
 fprintf(fp2, "R2 3 2 %f\n",values(2));
 fprintf(fp2, "R3 2 5 %f\n",values(3));
@@ -47,7 +48,7 @@ fclose(fp2);
 
 %DADOS PARA O NGSPICE 2
 
-fp3 = fopen('/home/fmcb/ist-tcfe/t2/sim/ngspice_2.txt',"w");
+fp3 = fopen('/home/fmcb/ist-tcfe/t2/sim/ngspice2.txt',"w");
 fprintf(fp3, "R1 GND 2 %f\n",values(1));
 fprintf(fp3, "R2 3 2 %f\n",values(2));
 fprintf(fp3, "R3 2 5 %f\n",values(3));
@@ -84,7 +85,7 @@ fclose(fp);
 
 
 %theoretical analysis 3
-fp4 = fopen('/home/fmcb/ist-tcfe/t2/sim/ngspice_3.txt',"w");
+fp4 = fopen('/home/fmcb/ist-tcfe/t2/sim/ngspice3.txt',"w");
 fprintf(fp4, "R1 1 2 %f\n",values(1));
 fprintf(fp4, "R2 3 2 %f\n",values(2));
 fprintf(fp4, "R3 2 5 %f\n",values(3));
@@ -119,7 +120,7 @@ ylabel("v6n[V]");
 
 title("Natural solution");
 
-print(f1,"natural_solution.eps","-depsc");
+print(f1,"naturalsolution.eps","-depsc");
 
 
 %4forced solution
@@ -147,11 +148,11 @@ plot(t*1000,v6f,"g");
 xlabel("t[ms]");
 ylabel("v6f[V]");
 title("Forced Solution");
-print(f2,"forced_solution.eps","-depsc");
+print(f2,"forcedsolution.eps","-depsc");
 
 
 
-fp5 = fopen('/home/fmcb/ist-tcfe/t2/sim/ngspice_4.txt',"w");
+fp5 = fopen('/home/fmcb/ist-tcfe/t2/sim/ngspice4.txt',"w");
 fprintf(fp5, "R1 1 2 %f\n",values(1));
 fprintf(fp5, "R2 3 2 %f\n",values(2));
 fprintf(fp5, "R3 2 5 %f\n",values(3));
@@ -184,7 +185,7 @@ xlabel("t[ms]");
  title("Total Solution");
 legend('v6','vs','Location','Northeast');
 
-print(f5,"Total_Solution.eps","-depsc");
+print(f5,"TotalSolution.eps","-depsc");
 	
 	
 	
@@ -196,7 +197,7 @@ print(f5,"Total_Solution.eps","-depsc");
 
 
 
-fp6 = fopen('/home/fmcb/ist-tcfe/t2/sim/ngspice_5.txt',"w");
+fp6 = fopen('/home/fmcb/ist-tcfe/t2/sim/ngspice5.txt',"w");
 fprintf(fp6, "R1 1 2 %f\n",values(1));
 fprintf(fp6, "R2 3 2 %f\n",values(2));
 fprintf(fp6, "R3 2 5 %f\n",values(3));
@@ -274,7 +275,7 @@ title("Frequency Response- Amplitude");
 
 legend('v6amp','vcamp','vsamp','Location','Northeast');
 
-print(f6,"Frequency_Response_Amplitude.eps","-depsc");
+print(f6,"FrequencyResponseAmplitude.eps","-depsc");
 
 
 
@@ -301,7 +302,7 @@ title("Frequency Response- Phase");
 
 legend('v6phs','vcphs','vsphs','Location','Northeast');
 
-print(f6,"Frequency_Response_Phase.eps","-depsc");
+print(f7,"FrequencyResponsePhase.eps","-depsc");
 
 	
 
