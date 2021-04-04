@@ -23,6 +23,8 @@ E = [Vs;0;0;0;0;0;0];
 
 D = B*E;
 
+sprintf("%.8f\n",D);
+
 fp=fopen('/home/fmcb/ist-tcfe/t2/doc/TA1.tex',"w");
 fprintf(fp,"v1 & %f \\\\ \\hline\nv2 & %f \\\\ \\hline\nv3 & %f \\\\ \\hline\nv4 & %f \\\\ \\hline\nv5 & %f \\\\ \\hline\nv6 & %f \\\\ \\hline\nv7 & %f \\\\ \\hline\nv8 & %f \\\\ \\hline",D(1),D(2),D(3),null,D(4),D(5),D(6),D(7));
 fclose(fp);
@@ -63,21 +65,21 @@ fclose(fp3);
 
 %theoretical analysis 2
 
-H = [-(1/R1),0, -(1/R4),0, -(1/R6),0,0,0,0;-(1/R1)-(1/R2)-(1/R3), 1/R2,1/R3,0,0,0,0,0,0; (-Kb -(1/R2)),1/R2,Kb,0,0,0,0,0,0;0,0,1,0,Kd/R6,-1,0,0,0;0,0,0,0,(1/R6+1/R7),-(1/R7),0,0,0;0,0,0,1,0,-1,0,0,0;Kb,0,-Kb,0,0,0,0,-1,0;0,0,1/R5,-(1/R5),0,0,-1,0,0;0,0,0,0,0,0,-1,1,-1];
+H = [-(1/R1),0, -(1/R4),0, -(1/R6),0,0;-(1/R1)-(1/R2)-(1/R3), 1/R2,1/R3,0,0,0,0; (-Kb -(1/R2)),1/R2,Kb,0,0,0,0;0,0,1,0,Kd/R6,-1,0;0,0,0,0,(1/R6+1/R7),-(1/R7),0;0,0,0,1,0,-1,0;Kb,0,-Kb-(1/R5),1/R5,0,0,1];
 
 Vx = D(5)-D(7)
 
-Z= [0;0;0;0;0;Vx;0;0;0];
+Z= [0;0;0;0;0;Vx;0];
 
 T = inv(H);
 
 X = T*Z;
 
-Req = (X(4)-X(6))/X(9);
+Req = (X(4)-X(6))/X(7);
 sprintf("%.6f\n",X);
 
 fp=fopen('/home/fmcb/ist-tcfe/t2/doc/TA2.tex',"w");
-fprintf(fp,"v1 & %f \\\\ \\hline\nv2 & %f \\\\ \\hline\nv3 & %f \\\\ \\hline\nv4 & %f \\\\ \\hline\nv5 & %f \\\\ \\hline\nv6 & %f \\\\ \\hline\nv7 & %f \\\\ \\hline\nv8 & %f \\\\ \\hline\nIx & %f \\\\ \\hline\nVx & %f \\\\ \\hline\nReq & %f \\\\ \\hline",null,X(1),X(2),null,X(3),X(4),X(5),X(6),,,Req);
+fprintf(fp,"v1 & %f \\\\ \\hline\nv2 & %f \\\\ \\hline\nv3 & %f \\\\ \\hline\nv4 & %f \\\\ \\hline\nv5 & %f \\\\ \\hline\nv6 & %f \\\\ \\hline\nv7 & %f \\\\ \\hline\nv8 & %f \\\\ \\hline\nIx & %f \\\\ \\hline\nVx & %f \\\\ \\hline\nReq & %f \\\\ \\hline",null,X(1),X(2),null,X(3),X(4),X(5),X(6),X(7),(X(4)-X(6)),Req);
 fclose(fp);
 
 
