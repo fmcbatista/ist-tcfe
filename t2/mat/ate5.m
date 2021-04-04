@@ -122,7 +122,7 @@ title("Natural solution");
 print(f1,"natural_solution.eps","-depsc");
 
 
-%forced solution
+%4forced solution
 
 w = 2*pi*1000;
 Zc = 1/(j*w*C);
@@ -131,7 +131,11 @@ G = [1,0,0,0,0,0,0; 1/R1, -(1/R1)-(1/R2)-(1/R3), 1/R2, 1/R3,0,0,0; 0, (-(1/R2)-K
 Q = [1;0;0;0;0;0;0];
 L = inv(G);
 P = L*Q;
-sprintf("%.6f\n",P)
+sprintf("%.6f\n",P);
+
+fp=fopen('/home/fmcb/ist-tcfe/t2/doc/TA4.tex',"w");
+fprintf(fp,"|v1| & %f \\\\ \\hline\n|v2| & %f \\\\ \\hline\n|v3| & %f \\\\ \\hline\n|v4| & %f \\\\ \\hline\n|v5| & %f \\\\ \\hline\n|v6| & %f \\\\ \\hline\n|v7| & %f \\\\ \\hline\n|v8| & %f \\\\ \\hline",P(1),P(2),P(3),null,P(4),P(5),P(6),P(7));
+fclose(fp);
 
 Gain = abs(P(5));
 Phase = angle(P(5));
