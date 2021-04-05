@@ -127,7 +127,7 @@ Also the solution is ploted in Figure~\ref{fig:plotA(4)} where the x-axis corres
 \vspace{5.0cm}
 
 \begin{figure}[h] \centering
-\includegraphics[width=0.8\linewidth]{forcedsolution.eps}
+\includegraphics[width=0.8\linewidth]{naturalsolution.eps}
 \caption{Plot of v6n(t) in the interval [0, 20]ms.}
 \label{fig:plotA(4)}
 \end{figure}
@@ -185,9 +185,39 @@ Then, in step (5), we determined the final total solution v6(t) by converting th
 \end{figure}
 
 Finally, in step (6) of our theoretical analysis, we attempted to figure out the frequency response of the circuit, computing the magnitude and the phase changes with the frequency of both the source voltage, the voltage across the capacitor and the voltage in node 6, and then proceding to plot them.
-The source's magnitude and phase do not hinge on the frequency values, so they are expected to remain constant as it is verified in Figure~\ref{fig:plotA(61)} and Figure~\ref{fig:plotA(62)}.
+To do so, we have octave solving the following equations:
 
-\vspace{5.0cm}
+\begin{equation}
+  V1(\frac{1}{R1}) - V2(\frac{1}{R1}+\frac{1}{R2}+\frac{1}{R3})  + V3\frac{1}{R2} + V5\frac{1}{R3} = 0
+\end{equation}
+
+\begin{equation}
+  V1 = 1
+\end{equation}
+
+\begin{equation}
+  V2(\frac{1}{R3}) - V5(\frac{1}{R3}+\frac{1}{R4}+\frac{1}{R5})  + V6(\frac{1}{R5} + \frac{1}{Zc} ) + V7\frac{1}{R7} - V8(\frac{1}{R7} + \frac{1}{Zc} = 0
+\end{equation}
+
+\begin{equation}
+  V2(Kb+\frac{1}{R2}) -V3\frac{1}{R2} - V5Kb = 0
+\end{equation}
+
+\begin{equation}
+  V2Kb  + V6(\frac{1}{R5}+\frac{1}{Zc}) - V5(\frac{1}{R5} + Kb) - V8\frac{1}{Zc} = 0
+\end{equation}
+
+\begin{equation}
+  V7(\frac{1}{R6}+\frac{1}{R7}) - V8\frac{1}{R7}= 0
+\end{equation}
+
+\begin{equation}
+  V5 + V7\frac{Kd}{R6} - V8 = 0
+\end{equation}
+
+Where Zc = 1/(j*w*C) and w=2*$\pi$*f.
+
+The source's magnitude and phase do not hinge on the frequency values, so they are expected to remain constant as it is verified in Figure~\ref{fig:plotA(61)} and Figure~\ref{fig:plotA(62)}.
 
 \begin{figure}[h] \centering
 \includegraphics[width=0.6\linewidth]{FrequencyResponseAmplitude.eps}
