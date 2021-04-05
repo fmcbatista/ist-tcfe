@@ -77,7 +77,7 @@ clean:
 	@rm -rf *.aux *.bbl *.blg *.glg *.glo *.gls *.ilg *.ist *.lof
 	@rm -rf *.log *.lot *.nlo *.nls *.out *.toc *~ *.*% ./*.pdf ./*.ps
 	@rm -rf *_tab.tex octave-workspace *.eps
-	@rm -f Vxp2.tex
+	@rm -f ../sim/Vxp2.tex
 	@rm -f ../sim/ngspicevalues.txt
 	@rm -f ../sim/ngspice2.txt
 	@rm -f ../sim/ngspice3.txt

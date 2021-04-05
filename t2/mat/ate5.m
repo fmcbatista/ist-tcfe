@@ -2,7 +2,7 @@ pkg load control
 output_precision(10)
 format long
 
-fp = fopen('/home/fmcb/ist-tcfe/t2/mat/Values.txt',"r");
+fp = fopen('../mat/Values.txt',"r");
 values = dlmread(fp,'\n');
 R1 = values(1)
 R2 = values(2)
@@ -26,11 +26,11 @@ D = B*E;
 
 sprintf("%.8f\n",D)
 
-fp=fopen('/home/fmcb/ist-tcfe/t2/doc/TA1.tex',"w");
+fp=fopen('../doc/TA1.tex',"w");
 fprintf(fp,"v1 & %f \\\\ \\hline\nv2 & %f \\\\ \\hline\nv3 & %f \\\\ \\hline\nv4 & %f \\\\ \\hline\nv5 & %f \\\\ \\hline\nv6 & %f \\\\ \\hline\nv7 & %f \\\\ \\hline\nv8 & %f \\\\ \\hline",D(1),D(2),D(3),null,D(4),D(5),D(6),D(7));
 fclose(fp);
 
-fp2 = fopen('/home/fmcb/ist-tcfe/t2/sim/ngspicevalues.txt',"w");
+fp2 = fopen('../sim/ngspicevalues.txt',"w");
 fprintf(fp2, "R1 1 2 %f\n",values(1));
 fprintf(fp2, "R2 3 2 %f\n",values(2));
 fprintf(fp2, "R3 2 5 %f\n",values(3));
@@ -48,7 +48,7 @@ fclose(fp2);
 
 %DADOS PARA O NGSPICE 2
 
-fp3 = fopen('/home/fmcb/ist-tcfe/t2/sim/ngspice2.txt',"w");
+fp3 = fopen('../sim/ngspice2.txt',"w");
 fprintf(fp3, "R1 GND 2 %f\n",values(1));
 fprintf(fp3, "R2 3 2 %f\n",values(2));
 fprintf(fp3, "R3 2 5 %f\n",values(3));
@@ -79,13 +79,13 @@ X = T*Z;
 Req = (X(4)-X(6))/X(7);
 sprintf("%.6f\n",X);
 
-fp=fopen('/home/fmcb/ist-tcfe/t2/doc/TA2.tex',"w");
+fp=fopen('../doc/TA2.tex',"w");
 fprintf(fp,"v1 & %f \\\\ \\hline\nv2 & %f \\\\ \\hline\nv3 & %f \\\\ \\hline\nv4 & %f \\\\ \\hline\nv5 & %f \\\\ \\hline\nv6 & %f \\\\ \\hline\nv7 & %f \\\\ \\hline\nv8 & %f \\\\ \\hline\nIx & %f \\\\ \\hline\nVx & %f \\\\ \\hline\nReq & %f \\\\ \\hline",null,X(1),X(2),null,X(3),X(4),X(5),X(6),X(7),(X(4)-X(6)),Req);
 fclose(fp);
 
 
 %theoretical analysis 3
-fp4 = fopen('/home/fmcb/ist-tcfe/t2/sim/ngspice3.txt',"w");
+fp4 = fopen('../sim/ngspice3.txt',"w");
 fprintf(fp4, "R1 1 2 %f\n",values(1));
 fprintf(fp4, "R2 3 2 %f\n",values(2));
 fprintf(fp4, "R3 2 5 %f\n",values(3));
@@ -134,7 +134,7 @@ L = inv(G);
 P = L*Q;
 sprintf("%.6f\n",P);
 
-fp=fopen('/home/fmcb/ist-tcfe/t2/doc/TA4.tex',"w");
+fp=fopen('../doc/TA4.tex',"w");
 fprintf(fp,"|v1| & %f \\\\ \\hline\n|v2| & %f \\\\ \\hline\n|v3| & %f \\\\ \\hline\n|v4| & %f \\\\ \\hline\n|v5| & %f \\\\ \\hline\n|v6| & %f \\\\ \\hline\n|v7| & %f \\\\ \\hline\n|v8| & %f \\\\ \\hline",P(1),P(2),P(3),null,P(4),P(5),P(6),P(7));
 fclose(fp);
 
@@ -152,7 +152,7 @@ print(f2,"forcedsolution.eps","-depsc");
 
 
 
-fp5 = fopen('/home/fmcb/ist-tcfe/t2/sim/ngspice4.txt',"w");
+fp5 = fopen('../sim/ngspice4.txt',"w");
 fprintf(fp5, "R1 1 2 %f\n",values(1));
 fprintf(fp5, "R2 3 2 %f\n",values(2));
 fprintf(fp5, "R3 2 5 %f\n",values(3));
@@ -186,18 +186,12 @@ xlabel("t[ms]");
 legend('v6','vs','Location','Northeast');
 
 print(f5,"TotalSolution.eps","-depsc");
-	
-	
-	
-	
-	
+		
 	
 %freq response 6
 
 
-
-
-fp6 = fopen('/home/fmcb/ist-tcfe/t2/sim/ngspice5.txt',"w");
+fp6 = fopen('../sim/ngspice5.txt',"w");
 fprintf(fp6, "R1 1 2 %f\n",values(1));
 fprintf(fp6, "R2 3 2 %f\n",values(2));
 fprintf(fp6, "R3 2 5 %f\n",values(3));
