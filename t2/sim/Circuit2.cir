@@ -11,9 +11,9 @@ Circuitot2
  
  print  V(6)-V(8) > ../sim/Vxp2.tex
  
- echo "op1TAB"
+ echo "op1_TAB"
  print all
- echo "op1END"
+ echo "op1_END"
  
  quit
  .endc
