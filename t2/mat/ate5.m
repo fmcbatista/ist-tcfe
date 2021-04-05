@@ -102,7 +102,7 @@ fprintf(fp4, "Gb 6 3 (2,5) %f\n",values(9));
 fclose(fp4);
 
 
-Tau = Req*C;
+Tau = -Req*C;
 
 t = 0:2e-6:20e-3;
 

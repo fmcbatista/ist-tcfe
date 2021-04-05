@@ -27,7 +27,7 @@ ngspice: ngspice1.log
 		
 ngspice1.log: ../sim/Circuit2.cir
 	ngspice -b $< -o $@
-	sed -i "s/v(6)-v(8) =/Vc 6 8 DC/g" ../sim/Vxp2.tex
+	#sed -i "s/v(6)-v(8) =/Vc 6 8 DC/g" ../sim/Vxp2.tex
 	
 ngspice2: ngspice2.log
 	$(eval NGSFIGS=$(shell grep _FIG $< | sed 's/_FIG//g' | sed ':a;N;$!ba;s/\n/ /g'))
