@@ -1,6 +1,8 @@
 Circuitot2
 
 .INCLUDE ngspicevalues.txt
+.op
+.end
 
 .control
  op
@@ -17,4 +19,4 @@ Circuitot2
  
  quit
  .endc
- .end
+ 

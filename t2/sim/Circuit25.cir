@@ -4,7 +4,7 @@ Circuit25
 
 .INCLUDE ngspice5.txt
 .ic v(6)=8.739810  v(8)=0
-
+.op
 .end
 
 .control
@@ -41,4 +41,4 @@ echo phaseresponse_FIG
  
 quit
 .endc
-.end
+

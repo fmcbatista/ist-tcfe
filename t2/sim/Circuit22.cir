@@ -3,6 +3,9 @@ Circuitot22
 .options savecurrents
 .INCLUDE ngspice2.txt
 
+.op
+.end
+
 .control
  op
  
@@ -18,4 +21,4 @@ Circuitot22
  
  quit
  .endc
- .end
+ 

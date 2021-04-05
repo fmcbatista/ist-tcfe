@@ -7,6 +7,7 @@ Circuit23
 
 .ic v(6)=8.739810489  v(8)=0
 
+.op
 .end
 
 .control
@@ -25,4 +26,4 @@ hardcopy naturalsolution.eps v(6)
 
 quit
 .endc
-.end
+
