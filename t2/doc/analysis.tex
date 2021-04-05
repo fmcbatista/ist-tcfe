@@ -115,14 +115,16 @@ The computed results can be found in Table~\ref{tab:TA2}.
   \label{tab:TA2}
 \end{table}
 
-Later, in step (3), we used the value of the equivalent resistant calculated in point (2) to find the natural solution of v6. Knowing that $"\tau"$ is calculated by the equation~\ref{tau}, in Equation~\ref{eq:natsol} we find the formula required to calculate the natural solution we wanted. 
+Later, in step (3), we used the value of the equivalent resistant calculated in point (2) to find the natural solution of v6. Knowing that $"\tau"$ is calculated by the equation~\ref{eq:tau}, in Equation~\ref{eq:natsol} we find the formula required to calculate the natural solution we wanted. 
 
 \begin{equation}
   V_{6n}(t) = V_{x}e^{-\frac{t}{\tau}},
   \label{eq:natsol}
 \end{equation}
 
-Also the solution is ploted in Figure~\ref{figure:plotA(4)} where the x-axis corresponds to time, t, expressed in [ms] and the y-axis corresponds to the natural solution of v6, 'v6n', expressed in [V].
+Also the solution is ploted in Figure~\ref{fig:plotA(4)} where the x-axis corresponds to time, t, expressed in [ms] and the y-axis corresponds to the natural solution of v6, 'v6n', expressed in [V].
+
+\vspace{5.0cm}
 
 \begin{figure}[h] \centering
 \includegraphics[width=0.8\linewidth]{forcedsolution.eps}
@@ -185,14 +187,16 @@ Then, in step (5), we determined the final total solution v6(t) by converting th
 Finally, in step (6) of our theoretical analysis, we attempted to figure out the frequency response of the circuit, computing the magnitude and the phase changes with the frequency of both the source voltage, the voltage across the capacitor and the voltage in node 6, and then proceding to plot them.
 The source's magnitude and phase do not hinge on the frequency values, so they are expected to remain constant as it is verified in Figure~\ref{fig:plotA(61)} and Figure~\ref{fig:plotA(62)}.
 
+\vspace{5.0cm}
+
 \begin{figure}[h] \centering
-\includegraphics[width=0.8\linewidth]{FrequencyResponseAmplitude.eps}
+\includegraphics[width=0.6\linewidth]{FrequencyResponseAmplitude.eps}
 \caption{Plot of amplitude frequency response (for vs(f), vc(f) and v6(f)) in the interval [0.1, 1M]Hz.}
 \label{fig:plotA(61)}
 \end{figure}
 
 \begin{figure}[h] \centering
-\includegraphics[width=0.8\linewidth]{FrequencyResponsePhase.eps}
+\includegraphics[width=0.6\linewidth]{FrequencyResponsePhase.eps}
 \caption{Plot of phase response (for vs(f), vc(f) and v6(f)) in the interval [0.1, 1M]Hz.}
 \label{fig:plotA(62)}
 \end{figure}

@@ -63,5 +63,15 @@ clean:
 	@rm -rf *.aux *.bbl *.blg *.glg *.glo *.gls *.ilg *.ist *.lof *.txt *.log1 *.log2 *.log3 *.log4 *.log5 *tab2.tex
 	@rm -rf *.log *.lot *.nlo *.nls *.out *.toc *~ *.*% ./*.pdf ./*.ps ./*.txt
 	@rm -rf *_tab.tex octave-workspace *.eps
+	@rm -f ../sim/Vxp2.txt
+	@rm -f ../sim/ngspicevalues.txt
+	@rm -f ../sim/ngspice2.txt
+	@rm -f ../sim/ngspice3.txt
+	@rm -f ../sim/ngspice4.txt
+	@rm -f ../sim/ngspice5.txt
+	@rm -f ../doc/TA1.tex
+	@rm -f ../doc/TA2.tex
+	@rm -f ../doc/TA4.tex
+	@rm -f ../doc/op_tab1.tex
 
 .PHONY: all clean ngspice octave
