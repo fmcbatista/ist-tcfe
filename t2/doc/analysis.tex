@@ -3,7 +3,54 @@
 
 In this section, the circuit shown in Figure~\ref{fig:T2Circuit} is analysed theoretically in six steps.
 
-In step (1), first of all, we used the nodal method to determine the voltages in all nodes and currents in all branches for t<0. The results are shown in Table~\ref{tab:TA1}.
+In step (1), first of all, we used the nodal method to determine the voltages in all nodes and currents in all branches for t<0. 
+The nodal method yields the following equations:
+
+\begin{equation}
+    V1 = Vs
+\end{equation}
+
+\begin{equation}
+  -V1(\frac{1}{R1})+ V2(\frac{1}{R1}+\frac{1}{R2}+\frac{1}{R3})  - V3\frac{1}{R2} - V5\frac{1}{R3} = 0
+\end{equation}
+
+\begin{equation}
+  V2(Kb+\frac{1}{R2}) -V3\frac{1}{R2} - V5Kb = 0
+\end{equation}
+
+\begin{equation}
+  V2\frac{1}{R3}  + V5(-\frac{1}{R3}-\frac{1}{R4}-\frac{1}{R5}) + V6\frac{1}{R5} + V7\frac{1}{R7} - V8\frac{1}{R7} = 0
+\end{equation}
+
+\begin{equation}
+  -V2Kb + V5(\frac{1}{R5}+Kb) - V6\frac{1}{R5}= 0
+\end{equation}
+
+\begin{equation}
+  V7(\frac{1}{R6}+\frac{1}{R7}) - V8\frac{1}{R7}= 0
+\end{equation}
+
+\begin{equation}
+  V5 + V7\frac{Kd}{R6} - V8 = 0
+\end{equation}
+
+\begin{equation}
+ V1(\frac{1}{R1}) - V2\frac{1}{R1} + Ia= 0
+\end{equation}
+
+\begin{equation}
+  V2\frac{1}{R2} - V3\frac{1}{R2} + Ib= 0
+\end{equation}
+
+\begin{equation}
+  V7\frac{1}{R6} + Id= 0
+\end{equation}
+
+\begin{equation}
+-V5\frac{1}{R5} + Ib + Ic + V6\frac{1}{R5}= 0
+\end{equation}
+
+The results are shown in Table~\ref{tab:TA1}.
 
 \begin{table}[h]
   \centering
@@ -16,7 +63,38 @@ In step (1), first of all, we used the nodal method to determine the voltages in
   \label{tab:TA1}
 \end{table}
 
-After this, in step (2), we determined the equivalent resistance as seen from the capacitor terminals. In order to do so, we followed the professor's sugestion. Therefore, in this section of the analysis, the capacitor was replaced by a voltage source Vx. Ix and Vx were calculated using Octave. After this, the value of the equivalent resistance was computed and determined. These procedures were necessary because they allowed us to calculate the time constant (\tau) without which we would no be able to performe all the theoretical analisys in the following sections. 
+After this, in step (2), we determined the equivalent resistance as seen from the capacitor terminals. In order to do so, we followed the professor's sugestion. Therefore, in this section of the analysis, the capacitor was replaced by a voltage source Vx. Ix and Vx were calculated using Octave.
+The equations to be solved by octave were the following:
+
+\begin{equation}
+  -V2\frac{1}{R1}  - V5\frac{1}{R4}  -  V7\frac{1}{R6}  = 0
+\end{equation}
+
+\begin{equation}
+  - V2(\frac{1}{R1}+\frac{1}{R2}+\frac{1}{R3})  + V3\frac{1}{R2} + V5\frac{1}{R3} = 0
+\end{equation}
+
+\begin{equation}
+  -V2(Kb+\frac{1}{R2}) +V3\frac{1}{R2} + V5Kb = 0
+\end{equation}
+
+\begin{equation}
+  V5 + V7(\frac{Kd}{R6}) - V8= 0
+\end{equation}
+
+\begin{equation}
+  V7(\frac{1}{R6}+\frac{1}{R7}) - V8\frac{1}{R7}= 0
+\end{equation}
+
+\begin{equation}
+  V6 - V8 = Vx
+\end{equation}
+
+\begin{equation}
+   V2(Kb)  - V5(\frac{1}{R5} +Kb) + V6\frac{1}{R5} + Ix = 0
+\end{equation}
+
+After this, the value of the equivalent resistance was computed and determined. These procedures were necessary because they allowed us to calculate the time constant (\tau) without which we would no be able to performe all the theoretical analisys in the following sections. 
 
 \begin{equation}
   \tau = R_{eq}C,
@@ -52,7 +130,38 @@ Also the solution is ploted in Figure~\ref{figure:plotA(4)} where the x-axis cor
 \label{fig:plotA(4)}
 \end{figure}
 
-In step (4), the forced solution v6f(t) was determined for f=1KHz and for t in the interval [0,20]ms. Moreover, the capacitance was replaced by the impedance, 'Z', and Vs was considered equal to one. The complex amplitudes in the nodes are shown in Table~\ref{tab:TA4}.
+In step (4), the forced solution v6f(t) was determined for f=1KHz and for t in the interval [0,20]ms. Moreover, the capacitance was replaced by the impedance, 'Z', and Vs was considered equal to one, representing its amplitude.
+The system of equations derived to compute the complex amplitudes is given by: 
+
+\begin{equation}
+  V1 = 1
+\end{equation}
+
+\begin{equation}
+  V1\frac{1}{R1} -V2(\frac{1}{R1}+\frac{1}{R2}+\frac{1}{R3})  + V3\frac{1}{R2} + V5\frac{1}{R3} = 0
+\end{equation}
+
+\begin{equation}
+  -V2(Kb+\frac{1}{R2}) +V3\frac{1}{R2} + V5Kb = 0
+\end{equation}
+
+\begin{equation}
+  V5 + V7(\frac{Kd}{R6}) - V8= 0
+\end{equation}
+
+\begin{equation}
+  -V7(\frac{1}{R6}+\frac{1}{R7}) + V8\frac{1}{R7}= 0
+\end{equation}
+
+\begin{equation}
+  V2(\frac{1}{R3})  - V5(\frac{1}{R3} +\frac{1}{R5} +\frac{1}{R4}) + V6(\frac{1}{R5} + \frac{1}{Zc}) + V7\frac{1}{R7} - V8(frac{1}{R7} + \frac{1}{Zc}) = 0
+\end{equation}
+
+\begin{equation}
+   V2(Kb)  - V5(\frac{1}{R5} +Kb) + V6(\frac{1}{R5} + \frac{1}{Zc}) - V8\frac{1}{Zc} = 0
+\end{equation}
+
+The complex amplitudes in the nodes are shown in Table~\ref{tab:TA4}.
 
 \begin{table}[h]
   \centering
@@ -73,7 +182,7 @@ Then, in step (5), we determined the final total solution v6(t) by converting th
 \label{fig:plotA(5)}
 \end{figure}
 
-Finally, in part 6 of our theoretical analysis, we attempted to figure out the frequency response of the circuit, computing the magnitude and the phase changes with the frequency of both the source voltage, the voltage across the capacitor and the voltage in node 6, and then proceding to plot them.
+Finally, in step (6) of our theoretical analysis, we attempted to figure out the frequency response of the circuit, computing the magnitude and the phase changes with the frequency of both the source voltage, the voltage across the capacitor and the voltage in node 6, and then proceding to plot them.
 The source's magnitude and phase do not hinge on the frequency values, so they are expected to remain constant as it is verified in Figure~\ref{fig:plotA(61)} and Figure~\ref{fig:plotA(62)}.
 
 \begin{figure}[h] \centering
