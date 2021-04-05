@@ -21,7 +21,7 @@ tran 1e-6 20ms
 
 plot v(6) v(1)
 
-hardcopy forcedsolution.ps v(6) v(1)
+hardcopy forcedsolution.eps v(6) v(1)
 
 quit
 .endc

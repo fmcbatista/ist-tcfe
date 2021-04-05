@@ -21,7 +21,7 @@ tran 1e-6 20ms
 
 plot v(6)
 
-hardcopy naturalsolution.ps v(6)
+hardcopy naturalsolution.eps v(6)
 
 quit
 .endc

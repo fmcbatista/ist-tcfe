@@ -9,11 +9,11 @@ Circuitot2
  echo "Operating Point Analysis"
  echo "************************"
  
- print  V(6)-V(8) > ../sim/Vxp2.tex
+ print  V(6)-V(8) > ../sim/Vxp2.txt
  
- echo "op1_TAB"
+ echo "op_TAB1"
  print all
- echo "op1_END"
+ echo "op_END1"
  
  quit
  .endc

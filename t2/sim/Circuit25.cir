@@ -26,14 +26,14 @@ echo "Frequency Response"
 ac dec 200 0.1 1MEG
 
 
-hardcopy ampresponse.ps db(v(6)) db(v(1))
+hardcopy ampresponse.eps db(v(6)) db(v(1))
 
 echo amplituderesponse_FIG
 
 Let phs6 = (180/PI) * ph(v(6))
 Let phsS = (180/PI) * ph(v(1))
  
-hardcopy phaseresponse.ps phs6 phsS
+hardcopy phaseresponse.eps phs6 phsS
  
 echo phaseresponse_FIG
  
