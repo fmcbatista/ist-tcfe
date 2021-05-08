@@ -1,0 +1,53 @@
+\section{Theoretical Analysis}
+\label{sec:analysis}
+
+In this section, we used a convenient theoretical model as taught in the classes. We calculated the output voltages and rippples in the various components of the circuit using the Octave tool. Furthermore we showcase some plots of both the Envelope detector and the voltage regulator components so that they can be compared with the simulation results.
+A transformer was used to reduce the potencial from 230 Volts to approximatelly 12 Volts.
+
+\subsection{Envelope Detector}
+
+We used a full wave rectifier to convert the AC current into DC current.~\ref{fig:rectifier} The use of an envelope detector will help reduce the amplitude of the DC component. ~\ref{fig:envelope}  
+
+
+\begin{figure}[h] \centering
+\includegraphics[width=0.8\linewidth]{rectifier.eps}
+\caption{Comparison between Envelope Detector and Rectifier.}
+\label{fig:rectifier}
+\end{figure}
+
+\begin{figure}[h] \centering
+\includegraphics[width=0.8\linewidth]{envelope.eps}
+\caption{Output Voltage of the Envelope Detector.}
+\label{fig:envelope}
+\end{figure}
+
+\subsection{Voltage Regulator}
+
+We decided to use 19 diodes to regulate the voltage to 12 Volts. The diodes were placed in series with each other and the voltage regulator also included a resistor of 5kohm.~\ref{fig:regulator}
+It was also calculated the voltage ripple of this part of the circuit.~\ref{fig:ripple}
+
+\begin{equation}
+  ripple = 6.231115e-9.
+  \label{ripple}
+\end{equation}
+
+\begin{figure}[h] \centering
+\includegraphics[width=0.8\linewidth]{diodesaverage.eps}
+\caption{Voltage regulator Output Signal.}
+\label{fig:regulator}
+\end{figure}
+
+\begin{figure}[h] \centering
+\includegraphics[width=0.8\linewidth]{deviation.eps}
+\caption{Voltage regulator output signal consedirng deviation.}
+\label{fig:deviation}
+\end{figure}
+
+\begin{figure}[h] \centering
+\includegraphics[width=0.8\linewidth]{ripple.eps}
+\caption{Voltage Ripple.}
+\label{fig:ripple}
+\end{figure}
+
+
+

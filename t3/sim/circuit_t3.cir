@@ -1,0 +1,94 @@
+.options savecurrents
+
+*Independent Voltage Source
+Vs 1 0 0 sin(0 230 50 0 0 90)
+
+
+*transformer
+F1 0 1 E1 0.07142857
+E1 2 3 0 1 0.07142857
+
+*full wave bridge rectifier
+
+D1 GND 2 Dio
+D2 3 4 Dio
+D3 GND 3 Dio
+D4 2 4 Dio
+
+
+*resistor
+
+R1 4 GND 15k
+R2 4 5 5k
+
+*envelope detector
+*capacitor
+
+C1 4 GND 0.0002
+
+
+*Voltage regulator
+
+D5 5 6 Dio
+D6 6 7 Dio
+D7 7 8 Dio
+D8 8 9 Dio
+D9 9 10 Dio
+D10 10 11 Dio
+D11 11 12 Dio
+D12 12 13 Dio
+D13 13 14 Dio
+D14 14 15 Dio
+D15 15 16 Dio
+D16 16 17 Dio
+D17 17 18 Dio
+D18 18 19 Dio
+D19 19 20 Dio
+D20 20 21 Dio
+D21 21 22 Dio
+D22 22 23 Dio
+D23 23 GND Dio
+
+.model Dio D
+.op
+.end
+.control
+
+*makes plots in color
+set hcopypscolor=0
+set color0= rgb:f/f/f ;
+set color1=rgb:1/1/1;
+set color2=red;
+set color3=green;
+set color4=blue;
+set color5= orange;
+set color5= yellow;
+
+op
+
+echo “Análise Transiente”
+tran 0.004  300m 100m 
+
+echo “op1_tab”
+print maximum(v(4))-minimum(v(4))
+echo “op1_end”
+
+print mean(v(4))
+
+echo “op2_tab”
+print maximum(v(5))-minimum(v(5))
+echo “op2_end”
+
+print mean(v(5))
+
+echo “op3_tab”
+print 1/ (42.3* ((maximum(v(5))-minimum(v(5))) + abs(mean(v(5)-12)) + 10e-6))
+echo “op3_end”
+
+hardcopy ngspice3.eps {v(4)} {v(3)-v(2)} {v(5)} {v(5)-12} 
+echo ngspice3_FIG
+
+hardcopy ngspice31.eps {v(4)-12} {v(5)-12}
+echo ngspice31_FIG
+
+.endc
