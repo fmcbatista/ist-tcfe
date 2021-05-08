@@ -1,0 +1,24 @@
+Circuitot22
+
+.options savecurrents
+.INCLUDE ngspice2.txt
+
+.op
+.end
+
+.control
+ op
+ 
+ echo "**************************"
+ echo "Operating Point Analysis 2"
+ echo "**************************"
+ 
+ echo "op_TAB2"
+ print all
+ print V(6)-V(8)
+ print (V(6)-V(8))/vx#branch
+ echo "op_END2"
+ 
+ quit
+ .endc
+ 

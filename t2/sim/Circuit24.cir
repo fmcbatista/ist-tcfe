@@ -1,0 +1,28 @@
+Circuit24
+
+.options savecurrents
+
+.INCLUDE ngspice4.txt
+
+
+.ic v(6)=8.739810  v(8)=0
+.op
+.end
+
+.control
+
+
+
+op
+
+echo "Forced solution-Transient Analysis"
+
+tran 1e-6 20ms
+
+plot v(6) v(1)
+
+hardcopy forcedsolution.eps v(6) v(1)
+
+quit
+.endc
+

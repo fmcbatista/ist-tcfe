@@ -1,0 +1,29 @@
+Circuit23
+
+.options savecurrents
+
+.INCLUDE ngspice3.txt
+
+
+.ic v(6)=8.739810489  v(8)=0
+
+.op
+.end
+
+.control
+
+
+
+op
+
+echo "Transient Analysis"
+
+tran 1e-6 20ms
+
+plot v(6)
+
+hardcopy naturalsolution.eps v(6)
+
+quit
+.endc
+
