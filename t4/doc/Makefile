@@ -65,6 +65,6 @@ clean:
 	@rm -f ../doc/TA5.tex
 	@rm -f ../doc/op_TAB.tex
 	@rm -f ../doc/op_TAB2.tex
-	@rm -f ../doc/op_TAB3.tex
+	@rm -f ../doc/op_tab3.tex
 
 .PHONY: all clean ngspice octave
