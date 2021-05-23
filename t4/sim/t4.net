@@ -86,6 +86,17 @@ print cost
 print impedin
 echo "op_END"
 
+echo "op_TAB3"
+print vcc[0]
+print in[0]
+print in2[0]
+print base[0]
+print coll[0]
+print emit[0]
+print emit2[0]
+print out[0]
+echo "op_END3"
+
 
 *need a different setup to measure output impedance
 .endc 

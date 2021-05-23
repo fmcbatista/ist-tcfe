@@ -151,7 +151,7 @@ fclose(fp);
 
 
 fp = fopen('../doc/TA4.tex',"w");
-fprintf(fp,"|VO2| & %f \\\\ \\hline\n|$V_{coll}$| & %f \\\\ \\hline\n|VA| & %f \\\\ \\hline\n|$V_{emit}$| & %f \\\\ \\hline\n|Vcc| & %f \\\\ \\hline\n|IB2| & %f \\\\ \\hline\n|IC2| & %f \\\\ \\hline\n|IE2| & %f \\\\ \\hline",VO2,VO1,VO2,VCC,IB2,IC2,IE2);
+fprintf(fp,"|$V_{coll}$| & %f \\\\ \\hline\n|$V_{emit}$| & %f \\\\ \\hline\n|Vcc| & %f \\\\ \\hline\n|IB2| & %f \\\\ \\hline\n|IC2| & %f \\\\ \\hline\n|IE2| & %f \\\\ \\hline",VO1,VO2,VCC,IB2,IC2,IE2);
 fclose(fp);
 
 fp = fopen('../doc/TA5.tex',"w");
