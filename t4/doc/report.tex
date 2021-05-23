@@ -20,7 +20,7 @@
 \usepackage{lipsum}
 
 \usepackage{graphicx}
-\graphicspath{{./}{../../figlib/}{../mat/}{../sim/}}
+\graphicspath{ {./} {../../figlib/} }
 \def\FontLn{% 16 pt normal
   \usefont{T1}{phv}{m}{n}\fontsize{16pt}{16pt}\selectfont}
 \def\FontLb{% 16 pt bold
@@ -116,7 +116,9 @@
 % ----------------------------------------------------------------------
 
 % Table of contents
-%
+
+\vspace{8.5cm}
+
 \tableofcontents
 
 % List of tables
@@ -138,11 +140,14 @@
 %  Body
 % ----------------------------------------------------------------------
 
+
 \input{intro}
+
+\input{simulation}
 
 \input{analysis}
 
-\input{simulation}
+\newpage
 
 \input{conclusion}
 %\cleardoublepage
@@ -157,3 +162,4 @@
 % ----------------------------------------------------------------------
 \end{document}
 % ----------------------------------------------------------------------
+

@@ -14,7 +14,11 @@ class Var:
         self.val = val + random.random()*(val*float(tol)/100)
         
     def printVar(self):
+<<<<<<< HEAD
         print (self.name, "=", self.val, "\n")
+=======
+        print self.name, "=", self.val, "\n",
+>>>>>>> dda672e0420163353c81d39de299c85d5f971062
         
 class Prob:
     def __init__(self, number, weight):
@@ -23,10 +27,17 @@ class Prob:
         self.weight = weight
         
     def printProb(self):
+<<<<<<< HEAD
         print ("Values: ")
         for i in range(len(self.varList)):
             self.varList[i].printVar()
         print ("\n\n")
+=======
+        print "Values: ",
+        for i in range(len(self.varList)):
+            self.varList[i].printVar()
+        print "\n\n"
+>>>>>>> dda672e0420163353c81d39de299c85d5f971062
             
     def addVar(self, var):
         self.varList.append(var)
@@ -60,7 +71,11 @@ class DataSet:
     
     def printDataSet(self):
         nprobs = len(self.probList)
+<<<<<<< HEAD
         print ("Units for the values: V, mA, kOhm, mS and uF\n\n")
+=======
+        print "Units for the values: V, mA, kOhm, mS and uF\n\n"
+>>>>>>> dda672e0420163353c81d39de299c85d5f971062
         for i in range(nprobs):
             self.probList[i].printProb()
 
@@ -74,4 +89,10 @@ def main():
     #print test
     dataset.printDataSet()
     
+<<<<<<< HEAD
     if __name__ == "__main__": main()
+=======
+if __name__ == "__main__": main()
+
+
+>>>>>>> dda672e0420163353c81d39de299c85d5f971062
