@@ -1,0 +1,75 @@
+\section{Analysis}
+
+In the theoretical section of this laboratory, we attempt to analyse the pass band filter by utilising the precets of the OP-AMP model given in the lectures.
+Here, we start by providing the circuit parameter values, such as the resistors, capacitors, and frequency range as the inputs, and then work our way to the desired values by establishing the governing equations of the Operational Amplifier. Based on the information provided by the professor during the lectures we decided to establish the following equations:
+
+\begin{equation}
+T(s)= \frac{R1*C1*s}{1+R1*C1*s} * (1+\frac{R3}{R4}) * \frac{1}{1+R2*C2*s}
+\end{equation}
+
+With this equation we determined the Gain in the central frequency which is maximum. This gain is presented in the table and calculated with the equation both given bellow.
+
+\begin{equation}
+Gain= \frac{R1*C1*s}{1+R1*C1*s} * (1+\frac{R3}{R4}) * \frac{1}{1+R2*C2*s}
+\end{equation}
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+    {\bf Component} & {\bf Value} \\ \hline
+    \input{a1.txt}
+  \end{tabular}
+  \caption{Values of Central Frequency and Gain.}
+\end{table}
+
+Afterwards we plotted the Gain's and Phase's Frequency response to see how the vary with the frequency. We concluded, as expected, that the Gain is maximum at the central frequency values.
+
+According to what was taught in the theoretical lectures and using the following expressions and the Octave tool we were also able to determine the input and output impedances values.
+
+\begin{equation}
+\omega_L = \frac{1}{R1+C1}
+\end{equation}
+
+\begin{equation}
+\omega_H = \frac{1}{R2+C2}
+\end{equation}
+
+\begin{equation}
+\omega_O = sqrt{\omega_L * \omega_H}
+\end{equation}
+
+\begin{equation}
+Z_{in} = |R1 + \frac{1}{C1*\omega_O *j}|
+\end{equation}
+
+\begin{equation}
+Z_{out} = |\frac{1}{j*\omega_O*C2 + \frac{1}{R2}}|
+\end{equation}
+
+The values for the impedances are provided in this table:
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+    {\bf Component} & {\bf Value} \\ \hline
+    \input{a2.txt}
+  \end{tabular}
+  \caption{Values of Input and Output Impedance.}
+  \label{tab:aimped}
+\end{table}
+
+Finally as requested by the professor we calculated the cost and merit of the architectured circuit. The values for both parameter are presented in the table bellow:
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+    {\bf Component} & {\bf Value} \\ \hline
+    \input{a3.txt}
+  \end{tabular}
+  \caption{Cost and figure of Merit.}
+  \label{tab:amerit}
+\end{table}
+

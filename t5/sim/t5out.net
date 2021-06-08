@@ -1,5 +1,3 @@
-*-----------------------------------------------------------------------------
-*
 * To use a subcircuit, the name must begin with 'X'.  For example:
 * X1 1 2 3 4 5 uA741
 *
@@ -49,41 +47,42 @@
 
 .options savecurrents
 
-Vcc vcc 0 5.0
-Vee vee 0 -5.0
+
+
+Vcc vcc 0 10.0
+Vee vee 0 -10.0
 Vin in 0 0 ac 1.0 sin(0 10m 1k)
 
-X1 0 inv_in vcc vee out uA741
+X1 pinv ninv vcc vee invout uA741
 
-R1 in inv_in 1000
-R2 inv_in out 10000
+R1 pinv 0 1000
+R2 invout out 1000
+R3 invout ninv 100000
+R4 ninv 0 20000
+
+C1 in pinv 0.22u
+C2 out 0 0.11u
 
 * load
-RL out 0 8
+vLoad out 0 0.0 ac 1.0
 
 .op
 .end
 
 .control
 
-print all
-
-* time analysis
-tran 1e-5 1e-2
-plot v(out)
-hardcopy vo1.ps vdb(out)
-
-
-* frequency analysis
 ac dec 10 10 100MEG
-plot vdb(out)
-plot vp(out)
-hardcopy vo1f.ps vdb(out)
 
-*input impedance in kohm
-print v(in)[40]/R1[i]/1000
+let Zout = (v(out)[40]/i(vLoad)[40])
 
-*need a different setup to measure output impedance
+echo "imp_out_TAB"
+print Zout
+echo "imp_out_END"
 
-.endc 
+.endc
+
+
+
+
+
 
